@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Employment";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Will add employment table via jsgrid here. Test to see if could add page.</p>
+
+@model Project3_FinalExam.ViewModels.EmploymentViewModel
+
+<h2>@Model.Title</h2>
+
+<div id="employment"></div>
+
+@foreach (var employ in Model.employment)
+{
+    <h3 id=@String.Concat("myHdng", employ.title)><b>@employ.title</b></h3>
+
+    <div id=@String.Concat("myDiv", employ.title)>
+        <ul>
+            @foreach (var dataPiece in @employ.professionalEmploymentInformation)
+            {
+                <li>@dataPiece.employer</li>
+                <li>@employ.degree</li>
+                <li>@employ.city</li>
+                <li>@employ.title</li>
+                <li>@employ.startDate</li>
+
+            }
+        </ul>
+    </div>
+}
+@*Get jQuery and jQueryUI Scripts from wwwroot*@
+<script src="~/jquery/jquery.js"></script>
+<link rel="stylesheet" href="~/jqueryui/themes/le-frog/jquery-ui.min.css">
+<script src="~/jqueryui/jquery-ui.js"></script>
+<script>
+    // Create Accordion
+    let headings = document.querySelectorAll("h3");
+    let divs = document.querySelectorAll("[id^='myDiv']");
+
+    for (var i = 0; i < headings.length; i++) {
+        $("#myUnderDegrees").append($("#" + headings[i].id));
+        $("#myUnderDegrees").append($("#" + divs[i].id));
+    }
+
+    $('#myUnderDegrees').accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
+    });
+</script>
