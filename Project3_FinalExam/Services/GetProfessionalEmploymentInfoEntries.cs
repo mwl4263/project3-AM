@@ -9,29 +9,25 @@ using Newtonsoft.Json;
 
 namespace Project3_FinalExam.Services
 {
-    public class GetEmployment
+    public class GetProfessionalEmploymentInfoEntries
     {
-        public async Task<List<ProfessionalEmploymentInfoEntries>> GetEmploymentData()
+        public async Task<List<ProfessionalEmploymentInfoEntries>> GetAllProfessionalEmploymentInfoEntries()
         {
-            using (var client1 = new HttpClient())
+            using (var client = new HttpClient())
             {
-                client1.BaseAddress = new Uri("http://www.ist.rit.edu/");
-                client1.DefaultRequestHeaders.Accept.Clear();
-                client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-
+                client.BaseAddress = new Uri("http://www.ist.rit.edu/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
-                    HttpResponseMessage response = await client1.GetAsync("api/employment", HttpCompletionOption.ResponseHeadersRead);
+                    HttpResponseMessage response = await client.GetAsync("api/employment", HttpCompletionOption.ResponseHeadersRead);
                     response.EnsureSuccessStatusCode();
                     var data = await response.Content.ReadAsStringAsync();
 
-                    // Above three lines can be replaced with new helper method below
-                    // string responseBody = await client.GetStringAsync(uri);
-
                     var rtnResults = JsonConvert.DeserializeObject<Dictionary<string, List<ProfessionalEmploymentInfoEntries>>>(data);
+
                     List<ProfessionalEmploymentInfoEntries> employmentList = new List<ProfessionalEmploymentInfoEntries>();
-                    ProfessionalEmploymentInfoEntries employmentData = new ProfessionalEmploymentInfoEntries();
+                    ProfessionalEmploymentInfoEntries employment = new ProfessionalEmploymentInfoEntries();
 
                     foreach (KeyValuePair<string, List<ProfessionalEmploymentInfoEntries>> kvp in rtnResults)
                     {
@@ -42,21 +38,20 @@ namespace Project3_FinalExam.Services
                     }
 
                     return employmentList;
-
-
-
                 }
                 catch (HttpRequestException hre)
                 {
                     var msg = hre.Message;
                     List<ProfessionalEmploymentInfoEntries> employmentList = new List<ProfessionalEmploymentInfoEntries>();
                     return employmentList;
+                    //return "HttpRequestException";
                 }
                 catch (Exception ex)
                 {
                     var msg = ex.Message;
                     List<ProfessionalEmploymentInfoEntries> employmentList = new List<ProfessionalEmploymentInfoEntries>();
                     return employmentList;
+                    //return "Exception"; ;
                 }
             }
         }

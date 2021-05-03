@@ -7,17 +7,18 @@
 
 @model Project3_FinalExam.ViewModels.EmploymentViewModel
 
-<h2>@Model.Title</h2>
+<h2>Professional Employment Table</h2>
 
 <div id="employment"></div>
+<p>Model.employment[5]</p>
 
-@foreach (var employ in Model.employment)
+@foreach (var employ in Model.employment[5])
 {
     <h3 id=@String.Concat("myHdng", employ.title)><b>@employ.title</b></h3>
 
     <div id=@String.Concat("myDiv", employ.title)>
         <ul>
-            @foreach (var dataPiece in @employ.professionalEmploymentInformation)
+            @*@foreach (var dataPiece in employ)
             {
                 <li>@dataPiece.employer</li>
                 <li>@employ.degree</li>
@@ -25,7 +26,7 @@
                 <li>@employ.title</li>
                 <li>@employ.startDate</li>
 
-            }
+            }*@
         </ul>
     </div>
 }

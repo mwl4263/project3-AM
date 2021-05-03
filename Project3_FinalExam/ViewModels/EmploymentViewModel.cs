@@ -8,8 +8,7 @@ namespace Project3_FinalExam.ViewModels
 {
     public class EmploymentViewModel
     {
-        public List<ProfessionalEmploymentInfoEntries> employment { get; set; }
-        public string Title { get; set; }
+        public List<List<ProfessionalEmploymentInfoEntries>> employment { get; set; }
 
     }
 }
