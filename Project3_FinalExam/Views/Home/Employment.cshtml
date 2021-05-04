@@ -10,23 +10,21 @@
 <h2>Professional Employment Table</h2>
 
 <div id="employment"></div>
-<p>Model.employment[5]</p>
-
+<p>Model.employment</p>
 @foreach (var employ in Model.employment)
 {
     <h3 id=@String.Concat("myHdng", employ.title)><b>@employ.title</b></h3>
 
     <div id=@String.Concat("myDiv", employ.title)>
         <ul>
-            @foreach (var dataPiece in employ)
-            {
-                <li>@dataPiece.employer</li>
+
+                <li>@employ.employer</li>
                 <li>@employ.degree</li>
                 <li>@employ.city</li>
                 <li>@employ.title</li>
                 <li>@employ.startDate</li>
 
-            }
+      
         </ul>
     </div>
 }

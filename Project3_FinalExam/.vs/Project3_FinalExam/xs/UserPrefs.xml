@@ -1,23 +1,20 @@
 ﻿<Properties StartupConfiguration="{E83FDB37-69F7-4142-BF19-751542707084}|Default">
   <MonoDevelop.Ide.ItemProperties.Project3__FinalExam PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ViewModels/EmploymentViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Employment.cshtml">
     <Files>
-      <File FileName="Models/Faculty.cs" Line="24" Column="1" />
-      <File FileName="Models/ProfessionalEmploymentInfoEntries.cs" Line="1" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="ViewModels/UndergradViewModel.cs" Line="1" Column="1" />
+      <File FileName="Views/Home/Employment.cshtml" Line="15" Column="2" />
+      <File FileName="Views/Home/GetFaculty.cshtml" Line="53" Column="8" />
+      <File FileName="Services/GetFaculty.cs" Line="1" Column="1" />
+      <File FileName="Models/EmploymentTable.cs" Line="1" Column="1" />
+      <File FileName="Controllers/HomeController.cs" Line="52" Column="52" />
+      <File FileName="Services/GetProfessionalEmploymentInfoEntries.cs" Line="23" Column="168" />
       <File FileName="Models/UnderGradMajors.cs" Line="1" Column="1" />
-      <File FileName="Views/Home/Employment.cshtml" Line="18" Column="1" />
-      <File FileName="ViewModels/EmploymentViewModel.cs" Line="12" Column="42" />
-      <File FileName="Views/Home/GetFaculty.cshtml" />
+      <File FileName="Models/ProfessionalEmploymentInfoEntries.cs" Line="1" Column="1" />
+      <File FileName="Models/Faculty.cs" Line="1" Column="1" />
       <File FileName="Models/ErrorViewModel.cs" Line="1" Column="1" />
-      <File FileName="Views/Home/Under.cshtml" />
-      <File FileName="Models/EmploymentTable.cs" />
-      <File FileName="Controllers/HomeController.cs" Line="58" Column="27" />
-      <File FileName="ViewModels/UndergradViewModel.cs" Line="12" Column="9" />
-      <File FileName="Services/GetUndergraduate.cs" Line="1" Column="1" />
-      <File FileName="Services/GetFaculty.cs" Line="12" Column="31" />
-      <File FileName="Program.cs" Line="16" Column="1" />
-      <File FileName="Services/GetProfessionalEmploymentInfoEntries.cs" Line="1" Column="1" />
-      <File FileName="ViewModels/HomeViewModel.cs" Line="1" Column="1" />
+      <File FileName="ViewModels/EmploymentViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,14 +25,23 @@
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True">
-                <Node name="EmploymentViewModel.cs" selected="True" />
-              </Node>
+              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="Employment.cshtml" selected="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="lib" expanded="True" />
               </Node>
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>emp</Value>
         </State>
       </Pad>
     </Pads>

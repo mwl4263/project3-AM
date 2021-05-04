@@ -20,7 +20,7 @@ namespace Project3_FinalExam.Services
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
-                    HttpResponseMessage response = await client.GetAsync("api/employment/employmentTable", HttpCompletionOption.ResponseHeadersRead);
+                    HttpResponseMessage response = await client.GetAsync("api/employment/employmentTable/professionalEmploynmentTable/professionalEmploymentInformation", HttpCompletionOption.ResponseHeadersRead);
                     response.EnsureSuccessStatusCode();
                     var data = await response.Content.ReadAsStringAsync();
 

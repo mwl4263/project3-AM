@@ -49,7 +49,7 @@ namespace Project3_FinalExam.Controllers
             return View(underViewModel);
         }
 
-        public async Task<IActionResult> Employee()
+        public async Task<IActionResult> Employment()
         {
             var getEmployment = new GetProfessionalEmploymentInfoEntries();
             var emp = await getEmployment.GetEmploymentInfoEntries();
