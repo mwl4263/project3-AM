@@ -11,7 +11,7 @@ namespace Project3_FinalExam.Services
 {
     public class GetProfessionalEmploymentInfoEntries
     {
-        public async Task<List<ProfessionalEmploymentInfoEntries>> GetAllProfessionalEmploymentInfoEntries()
+        public async Task<List<ProfessionalEmploymentInfoEntries>> GetEmploymentInfoEntries()
         {
             using (var client = new HttpClient())
             {
@@ -20,7 +20,7 @@ namespace Project3_FinalExam.Services
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
-                    HttpResponseMessage response = await client.GetAsync("api/employment", HttpCompletionOption.ResponseHeadersRead);
+                    HttpResponseMessage response = await client.GetAsync("api/employment/employmentTable", HttpCompletionOption.ResponseHeadersRead);
                     response.EnsureSuccessStatusCode();
                     var data = await response.Content.ReadAsStringAsync();
 
@@ -28,7 +28,7 @@ namespace Project3_FinalExam.Services
 
                     List<ProfessionalEmploymentInfoEntries> employmentList = new List<ProfessionalEmploymentInfoEntries>();
                     ProfessionalEmploymentInfoEntries employment = new ProfessionalEmploymentInfoEntries();
-
+                    Console.Write(rtnResults);
                     foreach (KeyValuePair<string, List<ProfessionalEmploymentInfoEntries>> kvp in rtnResults)
                     {
                         foreach (var item in kvp.Value)

@@ -49,6 +49,18 @@ namespace Project3_FinalExam.Controllers
             return View(underViewModel);
         }
 
+        public async Task<IActionResult> Employee()
+        {
+            var getEmployment = new GetProfessionalEmploymentInfoEntries();
+            var emp = await getEmployment.GetEmploymentInfoEntries();
+            var empViewModel = new EmploymentViewModel()
+            {
+                employment = emp,
+                Title = "Employment"
+            };
+            return View(empViewModel);
+
+        }
 
         public IActionResult Privacy()
         {
