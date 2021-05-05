@@ -11,4 +11,23 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\jsgrid\jsgrid.css" />
+    <Content Remove="wwwroot\jsgrid\jsgrid.js" />
+    <Content Remove="wwwroot\jsgrid\jsgrid.min.css" />
+    <Content Remove="wwwroot\jsgrid\jsgrid.min.js" />
+    <Content Remove="wwwroot\jsgrid\jsgrid-theme.css" />
+    <Content Remove="wwwroot\jsgrid\jsgrid-theme.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\jsgrid\jsgrid.css" />
+    <None Include="wwwroot\jsgrid\jsgrid.js" />
+    <None Include="wwwroot\jsgrid\jsgrid.min.css" />
+    <None Include="wwwroot\jsgrid\jsgrid.min.js" />
+    <None Include="wwwroot\jsgrid\jsgrid-theme.css" />
+    <None Include="wwwroot\jsgrid\jsgrid-theme.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\jsgrid\" />
+  </ItemGroup>
 </Project>

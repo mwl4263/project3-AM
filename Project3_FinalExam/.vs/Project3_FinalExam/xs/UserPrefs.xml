@@ -1,30 +1,41 @@
 ﻿<Properties StartupConfiguration="{E83FDB37-69F7-4142-BF19-751542707084}|Default">
   <MonoDevelop.Ide.ItemProperties.Project3__FinalExam PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/GetFaculty.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/jsgrid/jsgrid.css">
     <Files>
       <File FileName="Views/Shared/_Layout.cshtml" Line="1" Column="1" />
       <File FileName="ViewModels/UndergradViewModel.cs" />
       <File FileName="Views/Home/Employment.cshtml" Line="24" Column="34" />
       <File FileName="Views/Home/GetFaculty.cshtml" Line="1" Column="1" />
+      <File FileName="Models/CoopTable.cs" Line="1" Column="1" />
+      <File FileName="libman.json" Line="1" Column="1" />
+      <File FileName="Models/jsgrid/jsgrid.js" Line="1" Column="1" />
+      <File FileName="Models/jsgrid/jsgrid.css" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Project3_FinalExam" expanded="True">
             <Node name="Project3_FinalExam" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="jsgrid" expanded="True" selected="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="GetFaculty.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
-                <Node name="lib" expanded="True" />
+                <Node name="jquery" expanded="True" />
+                <Node name="jqueryui" expanded="True" />
+                <Node name="lib" expanded="True">
+                  <Node name="jquery-validation" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
