@@ -4,7 +4,7 @@
   "libraries": [
     {
       "library": "jsgrid@1.5.3",
-      "destination": "Models/jsgrid/"
+      "destination": "wwwroot/jsgrid/"
     }
   ]
 }
