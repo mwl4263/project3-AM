@@ -1621,3 +1621,5 @@ C:/Users/agord/Desktop/Lecture26/Project3EnhancedCode/Project3_FinalExam/obj/Deb
 /Users/masonlapine/GitHub/project3-AM/Project3_FinalExam/obj/Debug/net5.0/ref/Project3_FinalExam.dll
 /Users/masonlapine/GitHub/project3-AM/Project3_FinalExam/obj/Debug/net5.0/Project3_FinalExam.pdb
 /Users/masonlapine/GitHub/project3-AM/Project3_FinalExam/obj/Debug/net5.0/Project3_FinalExam.genruntimeconfig.cache
+/Users/masonlapine/GitHub/project3-AM/Project3_FinalExam/bin/Debug/net5.0/libman.json
+/Users/masonlapine/GitHub/project3-AM/Project3_FinalExam/bin/Debug/net5.0/mono_crash.11a6748113.2.json
