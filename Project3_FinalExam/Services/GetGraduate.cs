@@ -25,9 +25,6 @@ namespace Project3_FinalExam.Services
                     HttpResponseMessage response = await client1.GetAsync("api/degrees/graduate", HttpCompletionOption.ResponseHeadersRead);
                     response.EnsureSuccessStatusCode();
                     var data = await response.Content.ReadAsStringAsync();
-                    Console.Write(data);
-                    // int charLocation = data.IndexOf(stopAt
-                    // data.Substring()
 
                     // Above three lines can be replaced with new helper method below
                     // string responseBody = await client.GetStringAsync(uri);
