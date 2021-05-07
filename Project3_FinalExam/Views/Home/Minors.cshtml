@@ -1,0 +1,41 @@
+﻿@model Project3_FinalExam.ViewModels.MinorsViewModel
+
+<h2>@Model.Title</h2>
+
+<div id="myUnderGradMinors"></div>
+    @foreach (var minor in Model.Minors) {
+           <h3 id=@String.Concat("myHdng", minor.name)><b>@minor.name</b></h3>
+
+           <div id=@String.Concat("myDiv", minor.name)>
+               <p>@minor.title</p>
+               <p>@minor.description</p>
+               <ul>
+                    @foreach (var course in @minor.courses)
+                    {
+                        <li>@course</li>
+
+                    }
+                </ul>
+                <p>@minor.note</p>
+           </div>
+                    }
+    @*Get jQuery and jQueryUI Scripts from wwwroot*@
+    <script src="~/jquery/jquery.js"></script>
+    <link rel="stylesheet" href="~/jqueryui/themes/le-frog/jquery-ui.min.css">
+    <script src="~/jqueryui/jquery-ui.js"></script>
+    <script>
+        // Create Accordion
+        let headings = document.querySelectorAll("h3");
+        let divs = document.querySelectorAll("[id^='myDiv']");
+
+        for (var i = 0; i < headings.length; i++) {
+            $("#myUnderGradMinors").append($("#" + headings[i].id));
+            $("#myUnderGradMinors").append($("#" + divs[i].id));
+        }
+
+        $('#myUnderGradMinors').accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: "content"
+        });
+    </script>

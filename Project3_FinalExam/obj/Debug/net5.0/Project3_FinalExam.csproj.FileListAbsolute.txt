@@ -2448,3 +2448,4 @@ C:\Users\agord\Documents\GitHub\project3-AM\Project3_FinalExam\obj\Debug\net5.0\
 C:\Users\agord\Documents\GitHub\project3-AM\Project3_FinalExam\obj\Debug\net5.0\ref\Project3_FinalExam.dll
 C:\Users\agord\Documents\GitHub\project3-AM\Project3_FinalExam\obj\Debug\net5.0\Project3_FinalExam.pdb
 C:\Users\agord\Documents\GitHub\project3-AM\Project3_FinalExam\obj\Debug\net5.0\Project3_FinalExam.genruntimeconfig.cache
+C:\Users\agord\Documents\GitHub\project3-AM\Project3_FinalExam\obj\Debug\net5.0\Razor\Views\Home\Minors.cshtml.g.cs
