@@ -1,11 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "Professional Employment Table";
+    ViewData["Title"] = "Co-op Table";
 }
-<h1>@ViewData["Title"]</h1>
+<h3>@ViewData["Title"]</h3>
 
-@model Project3_FinalExam.ViewModels.EmploymentViewModel
+@model Project3_FinalExam.ViewModels.CoopViewModel
 
-<div id="employment"></div>
+<div id="coop"></div>
 <div id="jsGrid" class="jsGrid"></div>
 
 
@@ -23,13 +23,12 @@
             sorting: true,
             paging: true,
 
-            data: @Html.Raw(Json.Serialize(Model.employment)),
+            data: @Html.Raw(Json.Serialize(Model.coop)),
             fields: [
                 { name: "employer", type: "text", width: 200 },
                 { name: "degree", type: "text", width: 100 },
                 { name: "city", type: "text", width: 200 },
-                { name: "title", type: "text", width: 250 },
-                { name: "startDate", type: "text", width: 100 }
+                { name: "term", type: "text", width: 100 },
             ]
         });
 
