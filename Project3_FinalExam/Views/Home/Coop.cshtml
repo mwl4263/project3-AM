@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Co-op Table";
+}
+<h3>@ViewData["Title"]</h3>
+
+@model Project3_FinalExam.ViewModels.CoopViewModel
+
+<div id="coop"></div>
+<div id="jsGrid" class="jsGrid"></div>
+
+
+<link rel="stylesheet" href="~/jqueryui/themes/le-frog/jquery-ui.min.css">
+<script src="~/jquery/jquery.js"></script>
+<script src="~/jqueryui/jquery-ui.js"></script>
+<link src="text/css" rel="stylesheet" href="~/jsgrid/jsgrid.min.css" />
+<link type="text/css" rel="stylesheet" href="~/jsgrid/jsgrid-theme.min.css" />
+<script src="~/jsgrid/jsgrid.min.js"></script>
+<script>
+        $("#jsGrid").jsGrid({
+            height: "90%",
+            width: "100%",
+
+            sorting: true,
+            paging: true,
+
+            data: @Html.Raw(Json.Serialize(Model.coop)),
+            fields: [
+                { name: "employer", type: "text", width: 200 },
+                { name: "degree", type: "text", width: 100 },
+                { name: "city", type: "text", width: 200 },
+                { name: "term", type: "text", width: 100 },
+            ]
+        });
+
+</script>

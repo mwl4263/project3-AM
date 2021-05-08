@@ -89,6 +89,20 @@ namespace Project3_FinalExam.Controllers
 
         }
 
+        public async Task<IActionResult> COOP()
+        {
+            var getCoop = new GetCoopInfoEntries();
+            var op = await getCoop.GetCoopEntries();
+            var coopViewModel = new CoopViewModel()
+            {
+                coop = op,
+                Title = "Co-op"
+            };
+            return View(coopViewModel);
+
+        }
+
+
         public IActionResult Privacy()
         {
             return View();
