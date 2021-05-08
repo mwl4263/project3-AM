@@ -14,10 +14,12 @@ namespace Project3_FinalExam.Controllers
     public class HomeController : Controller
     {
         private readonly IGetFaculty _facultyRepository;
+        private readonly IGetUndergraduate _undergraduateRepository;
 
-        public HomeController(IGetFaculty facultyRepository)
+        public HomeController(IGetFaculty facultyRepository, IGetUndergraduate undergraduateRepository)
         {
             _facultyRepository = facultyRepository;
+            _undergraduateRepository = undergraduateRepository;
         }
 
         public IActionResult Index()
@@ -37,10 +39,10 @@ namespace Project3_FinalExam.Controllers
             return View(homeViewModel);
         }
 
+
         public async Task<IActionResult> Under()
         {
-            var getUnder = new GetUndergraduate();
-            var under = await getUnder.GetUnderGradDegrees();
+            var under = await _undergraduateRepository.GetUnderGradDegrees();
             var underViewModel = new UndergradViewModel()
             {
                 UnderGrads = under,
