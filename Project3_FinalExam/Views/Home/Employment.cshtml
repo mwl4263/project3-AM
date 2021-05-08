@@ -11,37 +11,15 @@
 <div id="employment"></div>
 <p>Model.employment</p>
 <div id="jsGrid" class="jsGrid"></div>
-@foreach (var employ in Model.employment)
-{
-    <h3 id=@String.Concat("myHdng", employ.title)><b>@employ.title</b></h3>
-
-    <div id=@String.Concat("myDiv", employ.title)>
-        <ul>
-
-            <li>@employ.employer</li>
-            <li>@employ.degree</li>
-            <li>@employ.city</li>
-            <li>@employ.title</li>
-            <li>@employ.startDate</li>
 
 
-        </ul>
-    </div>
-}
-@*Get jQuery and jQueryUI Scripts from wwwroot*@
-<script src="~/jquery/jquery.js"></script>
 <link rel="stylesheet" href="~/jqueryui/themes/le-frog/jquery-ui.min.css">
+<script src="~/jquery/jquery.js"></script>
 <script src="~/jqueryui/jquery-ui.js"></script>
-<link src="text/css" rel="stylesheet" href="~/jsgrid/jsgrid.min.css"/>
-<link type="text/css" rel="stylesheet" href="~/jsgrid/jsgrid-theme.min.css"/>
+<link src="text/css" rel="stylesheet" href="~/jsgrid/jsgrid.min.css" />
+<link type="text/css" rel="stylesheet" href="~/jsgrid/jsgrid-theme.min.css" />
 <script src="~/jsgrid/jsgrid.min.js"></script>
 <script>
-    let headings = document.querySelectorAll("h3");
-    let divs = document.querySelectorAll("[id^='myDiv']");
-    var employmentData = @Html.Raw(Json.Serialize(Model.employment));
-    console.log(employmentData);
-    console.log(employmentData[0].employer)
-    $(document).ready(function () {
         $("#jsGrid").jsGrid({
             height: "90%",
             width: "100%",
@@ -49,21 +27,14 @@
             sorting: true,
             paging: true,
 
-
+            data: @Html.Raw(Json.Serialize(Model.employment)),
             fields: [
-                { name: "Employer", type: "text", width: 200 },
-                { name: "Degree", type: "text", width: 50 },
-                { name: "City", type: "text", width: 200 },
-                { name: "Title", type: "text", width: 250 },
-                { name: "Date", type: "text", width: 100 }
+                { name: "employer", type: "text", width: 200 },
+                { name: "degree", type: "text", width: 100 },
+                { name: "city", type: "text", width: 200 },
+                { name: "title", type: "text", width: 250 },
+                { name: "startDate", type: "text", width: 100 }
             ]
         });
-
-        for (var x = 0; x < employmentData.length; x++) {
-            $("#jsGrid").jsGrid("insertItem", { Employer: employmentData[x].employer, Degree: employmentData[x].degree, City: employmentData[x].city, Title: employmentData[x].title, Date: employmentData[x].startDate }).done(function () {
-            });
-        }
-    });
-
 
 </script>
