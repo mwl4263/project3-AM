@@ -24,6 +24,7 @@ namespace Project3_FinalExam
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IGetFaculty, GetFaculty>();
+            services.AddTransient<IGetUndergraduate, GetUndergraduate>();
 
             services.AddControllersWithViews();
         }
