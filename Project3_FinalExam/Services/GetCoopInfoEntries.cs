@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Project3_FinalExam.Services
 {
-    public class GetCoopInfoEntries
+    public class GetCoopInfoEntries : IGetCoop
     {
         public async Task<List<coopInfoEntries>> GetCoopEntries()
         {

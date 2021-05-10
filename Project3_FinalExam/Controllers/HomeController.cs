@@ -15,11 +15,19 @@ namespace Project3_FinalExam.Controllers
     {
         private readonly IGetFaculty _facultyRepository;
         private readonly IGetUndergraduate _undergraduateRepository;
+        private readonly IGetGraduate _graduateRepository;
+        private readonly IGetUndergraduateMinors _undergraduateMinorsRepository;
+        private readonly IGetEmployment _employmentRepository;
+        private readonly IGetCoop _coopRepository;
 
-        public HomeController(IGetFaculty facultyRepository, IGetUndergraduate undergraduateRepository)
+        public HomeController(IGetFaculty facultyRepository, IGetUndergraduate undergraduateRepository, IGetGraduate graduateRepository, IGetUndergraduateMinors undergraduateMinorsRepository, IGetEmployment employmentRepository, IGetCoop coopRepository)
         {
             _facultyRepository = facultyRepository;
             _undergraduateRepository = undergraduateRepository;
+            _graduateRepository = graduateRepository;
+            _undergraduateMinorsRepository = undergraduateMinorsRepository;
+            _employmentRepository = employmentRepository;
+            _coopRepository = coopRepository;
         }
 
         public IActionResult Index()
@@ -54,8 +62,7 @@ namespace Project3_FinalExam.Controllers
 
         public async Task<IActionResult> Graduate()
         {
-            var getGrad = new GetGraduate();
-            var grad = await getGrad.GetGradDegrees();
+            var grad = await _graduateRepository.GetGradDegrees();
             var gradViewModel = new GradViewModel()
             {
                 Grads = grad,
@@ -67,8 +74,7 @@ namespace Project3_FinalExam.Controllers
 
         public async Task<IActionResult> Minors()
         {
-            var getMinors = new GetUndergraduateMinors();
-            var minor = await getMinors.GetUnderGradMinors();
+            var minor = await _undergraduateMinorsRepository.GetUnderGradMinors();
             var minorsViewModel = new MinorsViewModel()
             {
                 Minors = minor,
@@ -80,8 +86,7 @@ namespace Project3_FinalExam.Controllers
 
         public async Task<IActionResult> Employment()
         {
-            var getEmployment = new GetProfessionalEmploymentInfoEntries();
-            var emp = await getEmployment.GetEmploymentInfoEntries();
+            var emp = await _employmentRepository.GetEmploymentInfoEntries();
             var empViewModel = new EmploymentViewModel()
             {
                 employment = emp,
@@ -91,10 +96,9 @@ namespace Project3_FinalExam.Controllers
 
         }
 
-        public async Task<IActionResult> COOP()
+        public async Task<IActionResult> Coop()
         {
-            var getCoop = new GetCoopInfoEntries();
-            var op = await getCoop.GetCoopEntries();
+            var op = await _coopRepository.GetCoopEntries();
             var coopViewModel = new CoopViewModel()
             {
                 coop = op,
