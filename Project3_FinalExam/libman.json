@@ -5,6 +5,14 @@
     {
       "library": "jsgrid@1.5.3",
       "destination": "wwwroot/jsgrid/"
+    },
+    {
+      "library": "slidesjs@3.0",
+      "destination": "wwwroot/slidesjs/"
+    },
+    {
+      "library": "Chart.js@3.2.0",
+      "destination": "wwwroot/Chart.js/"
     }
   ]
 }
