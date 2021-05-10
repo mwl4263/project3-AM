@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{E83FDB37-69F7-4142-BF19-751542707084}|Default">
   <MonoDevelop.Ide.ItemProperties.Project3__FinalExam PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Minors.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/GetAbout.cs">
     <Files>
       <File FileName="Views/Home/Employment.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Home/Index.cshtml" Line="7" Column="27" />
-      <File FileName="ViewModels/AboutViewModel.cs" Line="1" Column="1" />
-      <File FileName="Services/GetAbout.cs" Line="1" Column="1" />
-      <File FileName="Views/Home/Graduate.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Home/Minors.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/Index.cshtml" />
+      <File FileName="ViewModels/AboutViewModel.cs" />
+      <File FileName="Services/GetAbout.cs" Line="48" Column="1" />
+      <File FileName="Views/Home/Graduate.cshtml" />
+      <File FileName="Views/Home/Minors.cshtml" />
+      <File FileName="Services/KeyValuePair.cs" />
+      <File FileName="Models/About.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,12 +22,12 @@
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="GetAbout.cs" selected="True" />
+              </Node>
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Minors.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
@@ -36,7 +38,9 @@
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
+        <State>
+          <Value>about</Value>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

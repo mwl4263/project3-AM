@@ -11,7 +11,7 @@ namespace Project3_FinalExam.Services
 {
     public class GetAbout
     {
-        public async Task<List<About>> GetAbouts()
+        public async Task<About> GetAbouts()
         {
             using (var client = new HttpClient())
             {
@@ -24,32 +24,23 @@ namespace Project3_FinalExam.Services
                     response.EnsureSuccessStatusCode();
                     var data = await response.Content.ReadAsStringAsync();
 
-                    var rtnResults = JsonConvert.DeserializeObject<Dictionary<string, List<About>>>(data);
-                    List<About> aboutList = new List<About>();
-                    About about = new About();
-                    foreach (KeyValuePair<string, List<About>> kvp in rtnResults)
-                    {
-                        foreach (var item in kvp.Value)
-                        {
-                            aboutList.Add(item);
-                        }
-                    }
+                    var rtnResults = JsonConvert.DeserializeObject<About>(data);
+                    About about = rtnResults;
 
-                    return aboutList;
+                    return about;
                 }
                 catch (HttpRequestException hre)
                 {
                     var msg = hre.Message;
-                    List<About> aboutList = new List<About>();
-                    return aboutList;
+                    About about = new About();
+                    return about;
                     //return "HttpRequestException";
                 }
                 catch (Exception ex)
                 {
                     var msg = ex.Message;
-                    List<About> aboutList = new List<About>();
-                    //return "Exception"; ;
-                }
+                    About about = new About();
+                    return about;                 }
             }
         }
     }

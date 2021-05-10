@@ -8,8 +8,10 @@ namespace Project3_FinalExam.ViewModels
 {
     public class AboutViewModel
     {
-        public List<About> aboutInfo { get; set; }
         public string title { get; set; }
+        public string description { get; set; }
+        public string quote { get; set; }
+        public string quoteAuthor { get; set; }
 
     }
 }
