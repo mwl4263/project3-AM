@@ -1,10 +1,13 @@
-﻿@{
+﻿@model Project3_FinalExam.ViewModels.AboutViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1>@Model.description</h1>
+    <h1>@Model.about.title</h1>
 </div>
 <div>
-
+    <p>@Model.about.description</p>
+    <p><i>"@Model.about.quote"</i></p>
+    <p> - @Model.about.quoteAuthor</p>
 </div>

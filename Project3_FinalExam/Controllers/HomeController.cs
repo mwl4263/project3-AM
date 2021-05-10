@@ -13,6 +13,7 @@ namespace Project3_FinalExam.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IGetAbout _aboutRepository;
         private readonly IGetFaculty _facultyRepository;
         private readonly IGetUndergraduate _undergraduateRepository;
         private readonly IGetGraduate _graduateRepository;
@@ -20,8 +21,9 @@ namespace Project3_FinalExam.Controllers
         private readonly IGetEmployment _employmentRepository;
         private readonly IGetCoop _coopRepository;
 
-        public HomeController(IGetFaculty facultyRepository, IGetUndergraduate undergraduateRepository, IGetGraduate graduateRepository, IGetUndergraduateMinors undergraduateMinorsRepository, IGetEmployment employmentRepository, IGetCoop coopRepository)
+        public HomeController(IGetAbout aboutRepository, IGetFaculty facultyRepository, IGetUndergraduate undergraduateRepository, IGetGraduate graduateRepository, IGetUndergraduateMinors undergraduateMinorsRepository, IGetEmployment employmentRepository, IGetCoop coopRepository)
         {
+            _aboutRepository = aboutRepository;
             _facultyRepository = facultyRepository;
             _undergraduateRepository = undergraduateRepository;
             _graduateRepository = graduateRepository;
@@ -30,10 +32,6 @@ namespace Project3_FinalExam.Controllers
             _coopRepository = coopRepository;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         public async Task<IActionResult> GetFaculty()
         {
@@ -45,6 +43,16 @@ namespace Project3_FinalExam.Controllers
                 Title = "This is your Faculty"
             };
             return View(homeViewModel);
+        }
+        public async Task<IActionResult> Index()
+        {
+            var allAbouts = await _aboutRepository.GetAbouts();
+            var aboutViewModel = new AboutViewModel()
+            {
+                about = allAbouts,
+                Title = "This is your Faculty"
+            };
+            return View(aboutViewModel);
         }
 
 

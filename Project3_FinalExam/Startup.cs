@@ -23,13 +23,13 @@ namespace Project3_FinalExam
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IGetAbout, GetAbout>();
             services.AddTransient<IGetFaculty, GetFaculty>();
             services.AddTransient<IGetUndergraduate, GetUndergraduate>();
             services.AddTransient<IGetGraduate, GetGraduate>();
             services.AddTransient<IGetUndergraduateMinors, GetUndergraduateMinors>();
             services.AddTransient<IGetEmployment, GetProfessionalEmploymentInfoEntries>();
             services.AddTransient<IGetCoop, GetCoopInfoEntries>();
-
             services.AddControllersWithViews();
         }
 
