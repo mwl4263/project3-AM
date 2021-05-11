@@ -52,9 +52,31 @@
         var serial = @Html.Raw(Json.Serialize(Model.employment));
         for (element in serial) {
             console.log(serial[element].degree);
+<<<<<<< HEAD
             if serial[element].degree
             //degrees.push(element.degree);
         };
 
 
+=======
+            degrees.push(serial[element].degree);
+        };
+
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: degrees,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js Bar Chart'
+                    }
+                }
+            },
+        });
+>>>>>>> 32b83929b04e945d693a187b0b085c9932b2a621
 </script>
