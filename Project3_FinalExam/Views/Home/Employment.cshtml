@@ -7,6 +7,7 @@
 
 <div id="employment"></div>
 <div id="jsGrid" class="jsGrid"></div>
+<div id="Chartjs" class="Chartjs"></div>
 
 
 <link rel="stylesheet" href="~/jqueryui/themes/le-frog/jquery-ui.min.css">
@@ -15,6 +16,8 @@
 <link src="text/css" rel="stylesheet" href="~/jsgrid/jsgrid.min.css" />
 <link type="text/css" rel="stylesheet" href="~/jsgrid/jsgrid-theme.min.css" />
 <script src="~/jsgrid/jsgrid.min.js"></script>
+<script src="~/Chart.js/chart.js"></script>
+<script src="~/Chart.js/chart.min.js"></script>
 <script>
         $("#jsGrid").jsGrid({
             height: "90%",
@@ -32,5 +35,15 @@
                 { name: "startDate", type: "text", width: 100 }
             ]
         });
+
+
+        var ctx = document.getElementById('Chartjs');
+
+        var degrees = [];
+
+        for (element in @Html.Raw(Json.Serialize(Model.employment))) {
+            console.log(element);
+            //degrees.push(element.degree);
+        };
 
 </script>
