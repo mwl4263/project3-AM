@@ -3,12 +3,111 @@
     ViewData["Title"] = "Home Page";
 }
 
+
+
+<style>
+    body {
+        -webkit-font-smoothing: antialiased;
+        font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #232525;
+        padding-top: 70px;
+    }
+
+    #slides {
+        display: none
+    }
+
+        #slides .slidesjs-navigation {
+            margin-top: 3px;
+        }
+
+        #slides .slidesjs-previous {
+            margin-right: 5px;
+            float: left;
+        }
+
+        #slides .slidesjs-next {
+            margin-right: 5px;
+            float: left;
+        }
+
+    .slidesjs-pagination {
+        margin: 6px 0 0;
+        float: right;
+        list-style: none;
+    }
+
+        .slidesjs-pagination li {
+            float: left;
+            margin: 0 1px;
+        }
+
+            .slidesjs-pagination li a {
+                display: block;
+                width: 13px;
+                height: 0;
+                padding-top: 13px;
+                background-image: url(img/pagination.png);
+                background-position: 0 0;
+                float: left;
+                overflow: hidden;
+            }
+
+                .slidesjs-pagination li a.active,
+                .slidesjs-pagination li a:hover.active {
+                    background-position: 0 -13px
+                }
+
+                .slidesjs-pagination li a:hover {
+                    background-position: 0 -26px
+                }
+
+    #slides a:link,
+    #slides a:visited {
+        color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+        color: #9e2020
+    }
+
+    .navbar {
+        overflow: hidden
+    }
+</style>
+
 <div class="text-center">
     <h1>@Model.about.title</h1>
 </div>
 <div>
-    <img src="~/images/overhead1.jpeg" alt="Overhead image" style="width:100%; margin-bottom: 2em;" />
+    <div id="slides">
+        <img src="~/images/overhead1.jpeg" alt="Overhead image" style="width:100%; margin-bottom: 2em;" />
+        <img src="~/images/overhead2.jpeg" alt="Overhead image" style="width:100%; margin-bottom: 2em;" />
+        <img src="~/images/overhead3.jpeg" alt="Overhead image" style="width:100%; margin-bottom: 2em;" />
+        <img src="~/images/overhead4.jpeg" alt="Overhead image" style="width:100%; margin-bottom: 2em;" />
+        <img src="~/images/overhead5.jpeg" alt="Overhead image" style="width:100%; margin-bottom: 2em;" />
+        <img src="~/images/overhead6.jpeg" alt="Overhead image" style="width:100%; margin-bottom: 2em;" />
+        <a style="text-align: center" href="#" class="slidesjs-previous slidesjs-navigation">Previous</a>
+        <a  style="text-align: center" href="#" class="slidesjs-next slidesjs-navigation">Next</a>
+    </div>
+</div>
+<br />
+<div>
     <p>@Model.about.description</p>
     <p><i>"@Model.about.quote"</i></p>
-    <p> - @Model.about.quoteAuthor</p>
+    <p> -@Model.about.quoteAuthor</p>
 </div>
+<link rel="stylesheet" href="~/jqueryui/themes/le-frog/jquery-ui.min.css">
+<script src="~/jquery/jquery.js"></script>
+<script src="~/jqueryui/jquery-ui.js"></script>
+<script src="~/slidesjs/jquery.slides.js"></script>
+<script src="~/slidesjs/jquery.slides.min.js"></script>
+
+<script>$("#slides").slidesjs({
+        width: 940,
+    height: 528,
+    navigation: false
+    });
+   
+    $(".slidejs-pagination-item").hide();</script>
