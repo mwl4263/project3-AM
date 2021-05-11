@@ -1,7 +1,7 @@
 READ ME
 
 Alexis Gordon and Mason Lapine
-Final Project 3
+ISTE340 Client Programming Final Project 3
 5-10-2021
 
 
