@@ -7,7 +7,7 @@
 
 <div id="employment"></div>
 <div id="jsGrid" class="jsGrid"></div>
-<div id="Chartjs" class="Chartjs"></div>
+<canvas id="Chartjs" class="Chartjs" width="400" height="400"></canvas>
 
 
 <link rel="stylesheet" href="~/jqueryui/themes/le-frog/jquery-ui.min.css">
@@ -20,7 +20,6 @@
 <script src="~/Chart.js/chart.min.js"></script>
 <script>
 
-    Functio
         $("#jsGrid").jsGrid({
             height: "90%",
             width: "100%",
@@ -36,47 +35,62 @@
                 { name: "startDate", type: "text", width: 100 }
             ]
         });
-
-        var ctx = document.getElementById('Chartjs');
     function containsObject(obj, list) {
-    var i;
-    for (i = 0; i < list.length; i++) {
-        if (list[i] === obj) {
-            return true;
+        var i;
+        for (i = 0; i < list.length; i++) {
+            if (list[i] === obj) {
+                return true;
+            }
+            
         }
+        return false;
+        
+   
+}
+    var labels = []
+    rawData = []
+    var serial = @Html.Raw(Json.Serialize(Model.employment));
+        for (element in serial) {
+            if (containsObject(serial[element].degree, labels) == false) {
+                labels.push(serial[element].degree);
+            }
+            rawData.push(serial[element].degree);
+
+            
+    };
+    
+    function getOccurrence(array, value) {
+        var count = 0;
+        array.forEach((v) => (v === value && count++));
+        return count;
     }
 
-    return false;
-}
-        var degrees = []
-        var serial = @Html.Raw(Json.Serialize(Model.employment));
-        for (element in serial) {
-            console.log(serial[element].degree);
-<<<<<<< HEAD
-            if serial[element].degree
-            //degrees.push(element.degree);
-        };
+    console.log
+    console.log(labels);
+    occurences = [];
+    for (e in labels) {
+
+        console.log(labels[e])
+        count = 0;
+        rawData.forEach((v) => (v === labels[e] && count++));
+        occurences.push(count);
+    };
 
 
-=======
-            degrees.push(serial[element].degree);
-        };
-
-        var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: degrees,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Chart.js Bar Chart'
-                    }
-                }
-            },
+    console.log(occurences);
+    ctx = $('#Chartjs');
+    var myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Employment chart",
+                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                data: occurences
+            }]
+        },
+        options: {
+        }
         });
->>>>>>> 32b83929b04e945d693a187b0b085c9932b2a621
+    
 </script>
