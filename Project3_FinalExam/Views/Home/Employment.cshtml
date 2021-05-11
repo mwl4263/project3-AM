@@ -38,10 +38,10 @@
 
         var ctx = document.getElementById('Chartjs');
 
-        var degrees = [];
-
-        for (element in @Html.Raw(Json.Serialize(Model.employment))) {
-            console.log(element);
+        var degrees = []
+        var serial = @Html.Raw(Json.Serialize(Model.employment));
+        for (element in serial) {
+            console.log(serial[element].degree);
             //degrees.push(element.degree);
         };
 
