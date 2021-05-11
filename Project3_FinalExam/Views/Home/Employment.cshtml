@@ -19,10 +19,11 @@
 <script src="~/Chart.js/chart.js"></script>
 <script src="~/Chart.js/chart.min.js"></script>
 <script>
+
+    Functio
         $("#jsGrid").jsGrid({
             height: "90%",
             width: "100%",
-
             sorting: true,
             paging: true,
 
@@ -37,12 +38,23 @@
         });
 
         var ctx = document.getElementById('Chartjs');
+    function containsObject(obj, list) {
+    var i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i] === obj) {
+            return true;
+        }
+    }
 
+    return false;
+}
         var degrees = []
         var serial = @Html.Raw(Json.Serialize(Model.employment));
         for (element in serial) {
             console.log(serial[element].degree);
+            if serial[element].degree
             //degrees.push(element.degree);
         };
+
 
 </script>
